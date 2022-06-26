@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.cont {
+  height: 500px;
+  width: 500px;
+  border: 0.1px solid;
+  box-sizing: content-box !important;
+}
+
+.square {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.hov {
+  background-color: black;
+}
