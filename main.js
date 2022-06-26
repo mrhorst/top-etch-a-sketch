@@ -2,6 +2,8 @@
 const container = document.getElementById('cont')
 container.style = 'display: flex; flex-wrap: wrap; '
 
+/** Create hov CSS class and make it apply random colors */
+
 /** Set default resolution at 16 pixels */
 let nSquares = 16
 
@@ -48,13 +50,18 @@ btnNumSquares.onclick = () => {
   changeRes(prompt('What resolution would you like to set the canvas at?'))
 }
 
+const rand = () => {
+  return Math.floor(Math.random() * 255) + 1
+}
+
 /** Create renderSquare function to change props of the squares/pixels after clicking button */
 const renderSquare = () => {
   const square = document.querySelectorAll('.square')
   square.forEach((tile) => {
     tile.style = `width: ${500 / nSquares}px; height: ${500 / nSquares}px`
     tile.addEventListener('mouseover', (e) => {
-      e.target.className = 'hov square'
+      // e.target.className = 'hov square'
+      e.target.style.backgroundColor = `rgb(${rand()}, ${rand()}, ${rand()})`
     })
   })
 }
